@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <!--配置过滤器-->
+    <filter>
+        <filter-name>filter</filter-name>
+        <filter-class>filt.Filter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>fitler1</filter-name>
+        <filter-class>filt.Filter1</filter-class>
+    </filter>
+    <filter>
+        <filter-name>fitler2</filter-name>
+        <filter-class>filt.Filter2</filter-class>
+    </filter>
+    <filter>
+        <filter-name>fitler3</filter-name>
+        <filter-class>filt.Filter3</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filter</filter-name>
+        <!--
+           /* : 拦截所有的请求
+           /index.jsp : 指定拦截index2.jsp
+        -->
+        <url-pattern>/index2.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>fitler2</filter-name>
+        <url-pattern>/index3.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>fitler1</filter-name>
+        <url-pattern>/index3.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>fitler3</filter-name>
+        <url-pattern>/index3.jsp</url-pattern>
+    </filter-mapping>
+</web-app>
